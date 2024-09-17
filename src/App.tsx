@@ -81,7 +81,7 @@ const App = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      if (Math.random() < 0.1) {
+      if (Math.random() < 0.3) {
         const w = 50 + Math.random() * 50
         setClouds((prev) => [
           ...prev,
