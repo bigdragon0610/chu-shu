@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 
-const DANGO_R = 32
 const WINDOW_W = window.innerWidth
 const WINDOW_H = window.innerHeight
+const DANGO_R = WINDOW_W > 1024 ? 32 : 16
 
 const Sanbou = () => {
   return (
     <div className='absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center'>
-      <div className='w-120 border-b-120 border-b-[#E4D7C6] border-l-50 border-l-transparent border-r-50 border-r-transparent z-10' />
-      <div className='w-120 h-12 bg-[#D4C7B6] z-10 -mb-10 shadow-lg' />
+      <div className='w-60 border-b-60 lg:w-120 lg:border-b-120 border-b-[#E4D7C6] border-l-50 border-l-transparent border-r-50 border-r-transparent z-10' />
+      <div className='w-60 h-6 lg:w-120 lg:h-12 bg-[#D4C7B6] z-10 -mb-10 shadow-lg' />
       <div className='flex relative'>
-        <div className='w-12 h-80 skew-y-45 bg-[#E4D7C6]' />
-        <div className='absolute w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#230E04]' />
-        <div className='mt-6 w-60 h-80 bg-[#D4C7B6]' />
-        <div className='w-12 h-80 -skew-y-45 bg-[#C4B7A6]' />
+        <div className='w-6 h-40 lg:w-12 lg:h-80 skew-y-45 bg-[#E4D7C6]' />
+        <div className='absolute w-8 h-8 lg:w-16 lg:h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#230E04]' />
+        <div className='mt-3 w-30 h-40 lg:mt-6 lg:w-60 lg:h-80 bg-[#D4C7B6]' />
+        <div className='w-6 h-40 lg:w-12 lg:h-80 -skew-y-45 bg-[#C4B7A6]' />
       </div>
     </div>
   )
@@ -132,7 +132,7 @@ const App = () => {
       ))}
       <Sanbou />
       <div
-        className='absolute top-20 left-20 w-30 h-30 bg-gradient-to-tl bg-gradient-from-yellow-400 bg-gradient-via-yellow-500 bg-gradient-to-yellow-800 rounded-full'
+        className='absolute top-10 left-10 w-20 h-20 lg:top-20 lg:left-20 lg:w-30 lg:h-30 bg-gradient-to-tl bg-gradient-from-yellow-400 bg-gradient-via-yellow-500 bg-gradient-to-yellow-800 rounded-full'
         style={{
           boxShadow: '0 0 100px 10px #FFF, 0 0 50px 2px #FF0',
         }}
