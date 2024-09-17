@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 
 const WINDOW_W = window.innerWidth
 const WINDOW_H = window.innerHeight
-const DANGO_R = WINDOW_W > 1024 ? 32 : 16
+const IS_PC = WINDOW_W > 1024
+const DANGO_R = IS_PC ? 32 : 16
 
 const Sanbou = () => {
   return (
@@ -83,6 +84,7 @@ const App = () => {
     const id = setInterval(() => {
       if (Math.random() < 0.3) {
         const w = 50 + Math.random() * 50
+        const v = IS_PC ? 0.5 + Math.random() * 0.5 : 0.2 + Math.random() * 0.5
         setClouds((prev) => [
           ...prev,
           {
@@ -91,7 +93,7 @@ const App = () => {
             x: 0 - w,
             y: Math.random() * 200,
             z: Math.random() < 0.5 ? 0 : 1,
-            v: 0.5 + Math.random() * 0.5,
+            v,
           },
         ])
       }
