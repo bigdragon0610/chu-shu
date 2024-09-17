@@ -7,7 +7,7 @@ const DANGO_R = IS_PC ? 32 : 16
 
 const Sanbou = () => {
   return (
-    <div className='absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center'>
+    <div className='absolute bottom-5 lg:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center'>
       <div className='w-60 border-b-60 lg:w-120 lg:border-b-120 border-b-[#E4D7C6] border-l-50 border-l-transparent border-r-50 border-r-transparent z-10' />
       <div className='w-60 h-6 lg:w-120 lg:h-12 bg-[#D4C7B6] z-10 -mb-10 shadow-lg' />
       <div className='flex relative'>
@@ -118,7 +118,7 @@ const App = () => {
 
   return (
     <main
-      className='h-screen bg-gradient-to-t bg-gradient-from-blue-900 bg-gradient-via-dark bg-gradient-to-black overflow-hidden'
+      className='h-[100dvh] bg-gradient-to-t bg-gradient-from-blue-900 bg-gradient-via-dark bg-gradient-to-black overflow-hidden'
       onClick={(e) => {
         setDangos([
           ...dangos,
