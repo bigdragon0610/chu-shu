@@ -47,10 +47,12 @@ const Cloud = ({
   )
 }
 
-const Dango = ({ x, y }: { x: number; y: number }) => {
+const Dango = ({ x, y, color }: { x: number; y: number; color: string }) => {
   return (
     <div
-      className='absolute bottom-110 rounded-full shadow-md bg-gradient-to-tl bg-gradient-from-[#B48B67] bg-gradient-via-[#E2CFBB] bg-gradient-to-[#EFEEE7]'
+      className={
+        'absolute bottom-110 rounded-full shadow-md bg-gradient-to-tl ' + color
+      }
       style={{
         left: `${x}px`,
         bottom: `${y}px`,
@@ -65,6 +67,7 @@ type DangoType = {
   id: number
   x: number
   y: number
+  color: string
 }
 
 type CloudType = {
@@ -74,6 +77,32 @@ type CloudType = {
   y: number
   z: number
   v: number
+}
+
+const COLORS = [
+  'bg-gradient-from-[#B48B67] bg-gradient-via-[#E2CFBB] bg-gradient-to-[#EFEEE7]',
+  'bg-gradient-from-yellow-500 bg-gradient-via-yellow-200 bg-gradient-to-white',
+  'bg-gradient-from-green-500 bg-gradient-via-green-300 bg-gradient-to-white',
+  'bg-gradient-from-red-500 bg-gradient-via-red-300 bg-gradient-to-white',
+  'bg-gradient-from-purple-500 bg-gradient-via-purple-300 bg-gradient-to-white',
+  'bg-gradient-from-black bg-gradient-via-dark bg-gradient-to-white',
+]
+
+const randomColor = (rand: number) => {
+  switch (true) {
+    case rand < 0.9:
+      return COLORS[0]
+    case rand < 0.96:
+      return COLORS[1]
+    case rand < 0.97:
+      return COLORS[2]
+    case rand < 0.98:
+      return COLORS[3]
+    case rand < 0.99:
+      return COLORS[4]
+    default:
+      return COLORS[5]
+  }
 }
 
 const App = () => {
@@ -126,6 +155,7 @@ const App = () => {
             id: dangos.length,
             x: e.clientX - DANGO_R,
             y: WINDOW_H - e.clientY - DANGO_R,
+            color: randomColor(Math.random()),
           },
         ])
       }}
@@ -141,7 +171,7 @@ const App = () => {
         }}
       />
       {dangos.map((dango) => (
-        <Dango key={dango.id} x={dango.x} y={dango.y} />
+        <Dango key={dango.id} x={dango.x} y={dango.y} color={dango.color} />
       ))}
     </main>
   )
