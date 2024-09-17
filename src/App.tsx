@@ -82,7 +82,7 @@ const App = () => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      if (Math.random() < 0.3) {
+      if (Math.random() < 0.1) {
         const w = 50 + Math.random() * 50
         const v = IS_PC ? 0.5 + Math.random() * 0.5 : 0.2 + Math.random() * 0.5
         setClouds((prev) => [
