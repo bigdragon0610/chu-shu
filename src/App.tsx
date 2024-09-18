@@ -147,7 +147,7 @@ const App = () => {
 
   return (
     <main
-      className='h-[100dvh] bg-gradient-to-t bg-gradient-from-blue-900 bg-gradient-via-dark bg-gradient-to-black overflow-hidden'
+      className='h-[100dvh] relative bg-gradient-to-t bg-gradient-from-blue-900 bg-gradient-via-dark bg-gradient-to-black overflow-hidden'
       onClick={(e) => {
         setDangos([
           ...dangos,
